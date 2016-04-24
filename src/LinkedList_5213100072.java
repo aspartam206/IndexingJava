@@ -29,64 +29,56 @@ import data.structure.mabd.radityopw.pojo.Person;
  *
  * @author wicaku
  */
-public class LinkedList_5213100072 implements data.structure.mabd.radityopw.LinkedListNode {
+public class LinkedList_5213100072 {
 
-    private int N;        // number of elements on list
-    private Node pre;     // sentinel before first item
-    private Node post;    // sentinel after last item
+    class Node {
 
-    public LinkedList_5213100072() {
-        pre = new Node();
-        post = new Node();
-        pre.next = post;
-        post.prev = pre;
-    }
+        protected int index;
+        protected Node next, prev;
 
-    private static class Node extends data.structure.mabd.radityopw.pojo.Person {
-
-        public Node(String ktp, String nama, int umur) {
-            super(ktp, nama, umur);
+        /* Constructor when no input*/
+        public Node() {
+            next = null;
+            prev = null;
+            index = 0;
         }
-    }
 
-    @Override
-    public LinkedListNode next() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        /* Constructor with input */
+        public Node(int in, Node head, Node tail) {
+            index = in;
+            next = head;
+            prev = tail;
+        }
 
-    @Override
-    public LinkedListNode removeNext() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        /* Function to set link to next node */
+        public void setLinkNext(Node head) {
+            next = head;
+        }
 
-    @Override
-    public void addNext(LinkedListNode lln) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        /* Function to set link to previous node */
+        public void setLinkPrev(Node tail) {
+            prev = tail;
+        }
 
-    @Override
-    public LinkedListNode prev() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        /* Funtion to get link to next node */
+        public Node getLinkNext() {
+            return next;
+        }
 
-    @Override
-    public LinkedListNode removePrev() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        /* Function to get link to previous node */
+        public Node getLinkPrev() {
+            return prev;
+        }
 
-    @Override
-    public void addPrev(LinkedListNode lln) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        /* Function to set index to node */
+        public void setData(int d) {
+            index = d;
+        }
 
-    @Override
-    public Person value() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setValue(Person person) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /* Function to get index from node */
+        public int getData() {
+            return index;
+        }
     }
 
 }
